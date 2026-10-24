@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alessandro Gaggioli — Automation Engineer Portfolio</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#ecfeff',
+              400: '#22d3ee',
+              500: '#06b6d4',
+              600: '#0891b2',
+              900: '#164e63',
+              950: '#083344',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      height: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: rgba(100, 116, 139, 0.3);
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+
+<body class="bg-zinc-950 text-zinc-100 min-h-screen flex flex-col font-sans selection:bg-cyan-500 selection:text-black">
+
+  <!-- Technical Grid Background Accent -->
+  <div class="fixed inset-0 pointer-events-none opacity-[0.03] dark:opacity-[0.04] bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:24px_24px] z-0"></div>
+
+  <!-- Minimal Header -->
+  <header class="w-full border-b border-zinc-800/80 sticky top-0 bg-zinc-950/85 backdrop-blur-md z-30">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse"></span>
+        <a href="#" class="font-semibold tracking-tight text-white hover:text-cyan-400 transition-colors">
+          Alessandro Gaggioli
+        </a>
+      </div>
+
+      <nav class="flex items-center gap-6 text-sm">
+        <a href="#projects" class="text-zinc-400 hover:text-cyan-400 transition-colors">Projects</a>
+        <a href="#skills" class="text-zinc-400 hover:text-cyan-400 transition-colors">Skills</a>
+        <a href="#contact" class="text-zinc-400 hover:text-cyan-400 transition-colors">Contact</a>
+        <a href="mailto:alessandro.gaggioli4@gmail.com" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-mono bg-zinc-900 border border-zinc-700 hover:border-cyan-500 text-zinc-200 transition-all">
+          <i data-lucide="send" class="w-3.5 h-3.5 text-cyan-400"></i> Get in touch
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="relative z-10 flex-grow max-w-5xl w-full mx-auto px-6 py-12 sm:py-16 space-y-16">
+    
+    <!-- Hero / Profile Section -->
+    <section class="space-y-6">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md text-xs font-mono bg-cyan-950/60 border border-cyan-500/30 text-cyan-300">
+        <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+        <span>Automation Engineer</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
+        Alessandro Gaggioli
+      </h1>
+
+      <!-- Verbatim Profile from CV -->
+      <p class="text-base sm:text-lg text-zinc-300 leading-relaxed max-w-3xl border-l-2 border-cyan-500/50 pl-5">
+        "As an engineer, I am passionate about technology and innovation, particularly automation, power electronics and sustainable mobility. Determination, teamwork and curiosity guide my path. My passion for marine activities has driven me to challenge myself in experiences such as UniBoAT and the Monaco Energy Boat Challenge. My goal is to continue growing and contributing to innovative and sustainable projects."
+      </p>
+
+      <!-- Quick Contact Pills (No Location) -->
+      <div class="pt-2 flex flex-wrap gap-4 text-xs font-mono">
+        <a href="mailto:alessandro.gaggioli4@gmail.com" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-300 hover:border-cyan-500/50 hover:text-cyan-300 transition-colors">
+          <i data-lucide="mail" class="w-4 h-4 text-cyan-400"></i>
+          alessandro.gaggioli4@gmail.com
+        </a>
+        <a href="tel:+393669430374" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-300 hover:border-cyan-500/50 hover:text-cyan-300 transition-colors">
+          <i data-lucide="phone" class="w-4 h-4 text-cyan-400"></i>
+          +39 366 943 0374
+        </a>
+        <a href="https://linkedin.com/in/AlessandroGaggioli" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-300 hover:border-cyan-500/50 hover:text-cyan-300 transition-colors">
+          <i data-lucide="linkedin" class="w-4 h-4 text-cyan-400"></i>
+          LinkedIn Profile
+        </a>
+      </div>
+    </section>
+
+    <!-- Technical Stack Section -->
+    <section id="skills" class="space-y-4">
+      <div class="flex items-center justify-between border-b border-zinc-800 pb-2">
+        <h2 class="text-xs font-mono uppercase tracking-wider text-zinc-400 flex items-center gap-2">
+          <i data-lucide="terminal" class="w-3.5 h-3.5 text-cyan-400"></i> Core Technical Stack
+        </h2>
+      </div>
+      <div class="flex flex-wrap gap-2 pt-1">
+        <span class="px-3 py-1.5 rounded-md text-xs font-mono bg-zinc-900 border border-zinc-800 text-cyan-300">ROS2</span>
+        <span class="px-3 py-1.5 rounded-md text-xs font-mono bg-zinc-900 border border-zinc-800 text-cyan-300">STM32 (ARM)</span>
+        <span class="px-3 py-1.5 rounded-md text-xs font-mono bg-zinc-900 border border-zinc-800 text-cyan-300">C / C++</span>
+        <span class="px-3 py-1.5 rounded-md text-xs font-mono bg-zinc-900 border border-zinc-800 text-cyan-300">Python</span>
+        <span class="px-3 py-1.5 rounded-md text-xs font-mono bg-zinc-900 border border-zinc-800 text-cyan-300">MATLAB & Simulink</span>
+        <span class="px-3 py-1.5 rounded-md text-xs font-mono bg-zinc-900 border border-zinc-800 text-cyan-300">LabVIEW</span>
+        <span class="px-3 py-1.5 rounded-md text-xs font-mono bg-zinc-900 border border-zinc-800 text-cyan-300">CAN / CAN FD</span>
+        <span class="px-3 py-1.5 rounded-md text-xs font-mono bg-zinc-900 border border-zinc-800 text-cyan-300">Creo Parametric</span>
+        <span class="px-3 py-1.5 rounded-md text-xs font-mono bg-zinc-900 border border-zinc-800 text-zinc-400">UART / Serial</span>
+        <span class="px-3 py-1.5 rounded-md text-xs font-mono bg-zinc-900 border border-zinc-800 text-zinc-400">Power Electronics</span>
+      </div>
+    </section>
+
+    <!-- Selected Work & Projects Section -->
+    <section id="projects" class="space-y-8">
+      <div class="flex items-center justify-between border-b border-zinc-800 pb-3">
+        <div>
+          <h2 class="text-xl font-bold tracking-tight text-white flex items-center gap-2.5">
+            <i data-lucide="folder-git-2" class="w-5 h-5 text-cyan-400"></i> Selected Work & Projects
+          </h2>
+          <p class="text-xs font-mono text-zinc-400 mt-1">Industrial internships, competitive engineering teams & academic theses</p>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+
+        <!-- PROJECT 1: Fincantieri NexTech -->
+        <details class="group border border-zinc-800/90 rounded-xl bg-zinc-900/40 hover:border-zinc-700 transition-all overflow-hidden" open>
+          <summary class="cursor-pointer list-none p-6 flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+            <div class="space-y-2 flex-grow">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="text-xs font-mono font-medium text-cyan-400 bg-cyan-950/70 border border-cyan-800/60 px-2 py-0.5 rounded">
+                  Fincantieri NexTech
+                </span>
+                <span class="text-zinc-600">•</span>
+                <span class="text-xs font-mono text-zinc-400">Master Thesis Internship</span>
+                <span class="text-zinc-600">•</span>
+                <span class="text-xs font-mono text-zinc-400">03.2026 – 06.2026</span>
+              </div>
+              <h3 class="text-lg font-semibold text-white group-hover:text-cyan-300 transition-colors">
+                Naval Robotics Simulation & Autonomous Navigation
+              </h3>
+              <p class="text-sm text-zinc-400 leading-relaxed max-w-3xl">
+                Study of mobile and assistive robotics applications onboard ships, developing ROS2-based simulation environments for autonomous navigation.
+              </p>
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                <span class="px-2 py-0.5 text-xs font-mono bg-zinc-800/70 text-zinc-300 rounded border border-zinc-700/60">ROS2</span>
+                <span class="px-2 py-0.5 text-xs font-mono bg-zinc-800/70 text-zinc-300 rounded border border-zinc-700/60">Autonomous Navigation</span>
+                <span class="px-2 py-0.5 text-xs font-mono bg-zinc-800/70 text-zinc-300 rounded border border-zinc-700/60">Mobile Robotics</span>
+                <span class="px-2 py-0.5 text-xs font-mono bg-zinc-800/70 text-zinc-300 rounded border border-zinc-700/60">C++ / Python</span>
+              </div>
+            </div>
+            <div class="self-end sm:self-start text-zinc-500 group-open:rotate-180 transition-transform">
+              <i data-lucide="chevron-down" class="w-5 h-5"></i>
+            </div>
+          </summary>
+
+          <!-- Expanded Detail & Media Area -->
+          <div class="px-6 pb-6 pt-2 border-t border-zinc-800/80 space-y-5 text-sm text-zinc-300">
+            <div>
+              <h4 class="text-xs font-mono uppercase tracking-wider text-cyan-400 mb-1">Key Focus & Implementation</h4>
+              <p class="text-zinc-400 leading-relaxed">
+                Implementation of autonomous navigation algorithms tailored for tight marine environments. Development of hardware-in-the-loop simulation nodes, sensor fusion pipeline (LiDAR, IMU, wheel odometry), and behavioral state machines.
+              </p>
+            </div>
+
+            <!-- Media Slot (Ready for images / video) -->
+            <div>
+              <h4 class="text-xs font-mono uppercase tracking-wider text-zinc-400 mb-2">Media & Visuals</h4>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <!-- Image / Diagram Placeholder -->
+                <div class="relative rounded-lg border border-dashed border-zinc-800 bg-zinc-950/60 p-5 flex flex-col items-center justify-center text-center group/item hover:border-zinc-700 transition-colors min-h-[160px]">
+                  <i data-lucide="image" class="w-8 h-8 text-zinc-600 mb-2"></i>
+                  <p class="text-xs font-mono text-zinc-400">Simulation Environment / ROS2 Node Graph</p>
+                  <p class="text-[11px] text-zinc-600 mt-1">Replace with &lt;img src="path/to/image.jpg" /&gt;</p>
+                </div>
+                <!-- Video / Demo Placeholder -->
+                <div class="relative rounded-lg border border-dashed border-zinc-800 bg-zinc-950/60 p-5 flex flex-col items-center justify-center text-center group/item hover:border-zinc-700 transition-colors min-h-[160px]">
+                  <i data-lucide="play-circle" class="w-8 h-8 text-zinc-600 mb-2"></i>
+                  <p class="text-xs font-mono text-zinc-400">Simulation Video / Autonomous Run</p>
+                  <p class="text-[11px] text-zinc-600 mt-1">Embed YouTube / MP4 video</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- PROJECT 2: UniBoAT CTO -->
+        <details class="group border border-zinc-800/90 rounded-xl bg-zinc-900/40 hover:border-zinc-700 transition-all overflow-hidden">
+          <summary class="cursor-pointer list-none p-6 flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+            <div class="space-y-2 flex-grow">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="text-xs font-mono font-medium text-amber-400 bg-amber-950/70 border border-amber-800/60 px-2 py-0.5 rounded">
+                  UniBoAT Team
+                </span>
+                <span class="text-zinc-600">•</span>
+                <span class="text-xs font-mono text-zinc-400">Chief Technical Officer (CTO)</span>
+                <span class="text-zinc-600">•</span>
+                <span class="text-xs font-mono text-zinc-400">09.2024 – 09.2025</span>
+              </div>
+              <h3 class="text-lg font-semibold text-white group-hover:text-cyan-300 transition-colors">
+                Autonomous & Sustainable Racing Catamaran
+              </h3>
+              <p class="text-sm text-zinc-400 leading-relaxed max-w-3xl">
+                Overall coordination of boat design development and testing. Full supervision of cross-subsystem integration (mechanics, electronics, hydrodynamics, and control logic) and race telemetry strategy.
+              </p>
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                <span class="px-2 py-0.5 text-xs font-mono bg-zinc-800/70 text-zinc-300 rounded border border-zinc-700/60">System Integration</span>
+                <span class="px-2 py-0.5 text-xs font-mono bg-zinc-800/70 text-zinc-300 rounded border border-zinc-700/60">Race Strategy</span>
+                <span class="px-2 py-0.5 text-xs font-mono bg-zinc-800/70 text-zinc-300 rounded border border-zinc-700/60">Technical Leadership</span>
+                <span class="px-2 py-0.5 text-xs font-mono bg-amber-950/50 text-amber-300 rounded border border-amber-800/50">🏆 1st MEBC 2025</span>
+              </div>
+            </div>
+            <div class="self-end sm:self-start text-zinc-500 group-open:rotate-180 transition-transform">
+              <i data-lucide="chevron-down" class="w-5 h-5"></i>
+            </div>
+          </summary>
+
+          <div class="px-6 pb-6 pt-2 border-t border-zinc-800/80 space-y-5 text-sm text-zinc-300">
+            <div>
+              <h4 class="text-xs font-mono uppercase tracking-wider text-cyan-400 mb-1">Key Achievements & Roles</h4>
+              <ul class="list-disc list-inside text-zinc-400 space-y-1">
+                <li>1st place overall winner at the Monaco Energy Boat Challenge (MEBC) 2025.</li>
+                <li>Awarded the official Innovation and Design Prize MEBC 2025.</li>
+                <li>Directed dynamic water tests, safety validation, and powertrain energy management.</li>
+              </ul>
+            </div>
+
+            <!-- Media Slot -->
+            <div>
+              <h4 class="text-xs font-mono uppercase tracking-wider text-zinc-400 mb-2">Media & Visuals</h4>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="rounded-lg border border-dashed border-zinc-800 bg-zinc-950/60 p-5 flex flex-col items-center justify-center text-center min-h-[160px]">
+                  <i data-lucide="camera" class="w-8 h-8 text-zinc-600 mb-2"></i>
+                  <p class="text-xs font-mono text-zinc-400">Boat On-Water Photos & Race Day</p>
+                  <p class="text-[11px] text-zinc-600 mt-1">Replace with &lt;img src="path/to/boat.jpg" /&gt;</p>
+                </div>
+                <div class="rounded-lg border border-dashed border-zinc-800 bg-zinc-950/60 p-5 flex flex-col items-center justify-center text-center min-h-[160px]">
+                  <i data-lucide="video" class="w-8 h-8 text-zinc-600 mb-2"></i>
+                  <p class="text-xs font-mono text-zinc-400">Monaco Race Highlights Video</p>
+                  <p class="text-[11px] text-zinc-600 mt-1">Embed YouTube / MP4 video</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- PROJECT 3: UniBoAT Powertrain -->
+        <details class="group border border-zinc-800/90 rounded-xl bg-zinc-900/40 hover:border-zinc-700 transition-all overflow-hidden">
+          <summary class="cursor-pointer list-none p-6 flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+            <div class="space-y-2 flex-grow">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="text-xs font-mono font-medium text-cyan-400 bg-cyan-950/70 border border-cyan-800/60 px-2 py-0.5 rounded">
+                  UniBoAT Team
+                </span>
+                <span class="text-zinc-600">•</span>
+                <span class="text-xs font-mono text-zinc-400">Powertrain Division Member</span>
+                <span class="text-zinc-600">•</span>
+                <span class="text-xs font-mono text-zinc-400">09.2023 – 09.2024</span>
+              </div>
+              <h3 class="text-lg font-semibold text-white group-hover:text-cyan-300 transition-colors">
+                Electric Powertrain & Electronic System Architecture
+              </h3>
+              <p class="text-sm text-zinc-400 leading-relaxed max-w-3xl">
+                Design and implementation of the boat's electronic architecture, electric outboard motor prototype inverter programming, and Master ECU in LabVIEW.
+              </p>
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                <span class="px-2 py-0.5 text-xs font-mono bg-zinc-800/70 text-zinc-300 rounded border border-zinc-700/60">STM32 Firmware</span>
+                <span class="px-2 py-0.5 text-xs font-mono bg-zinc-800/70 text-zinc-300 rounded border border-zinc-700/60">CAN Bus</span>
+                <span class="px-2 py-0.5 text-xs font-mono bg-zinc-800/70 text-zinc-300 rounded border border-zinc-700/60">Inverter Tuning</span>
+                <span class="px-2 py-0.5 text-xs font-mono bg-zinc-800/70 text-zinc-300 rounded border border-zinc-700/60">LabVIEW Master ECU</span>
+              </div>
+            </div>
+            <div class="self-end sm:self-start text-zinc-500 group-open:rotate-180 transition-transform">
+              <i data-lucide="chevron-down" class="w-5 h-5"></i>
+            </div>
+          </summary>
+
+          <div class="px-6 pb-6 pt-2 border-t border-zinc-800/80 space-y-5 text-sm text-zinc-300">
+            <div>
+              <h4 class="text-xs font-mono uppercase tracking-wider text-cyan-400 mb-1">Architecture Overview</h4>
+              <p class="text-zinc-400 leading-relaxed">
+                Custom low-voltage harness routing, CAN communication layer for BMS and inverter telemetry, STM32 real-time monitoring cards, and competition outcomes: 4th place MEBC 2024 & 3rd place SIBW 2024 (Olbia).
+              </p>
+            </div>
+
+            <!-- Media Slot -->
+            <div>
+              <h4 class="text-xs font-mono uppercase tracking-wider text-zinc-400 mb-2">Media & Visuals</h4>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="rounded-lg border border-dashed border-zinc-800 bg-zinc-950/60 p-5 flex flex-col items-center justify-center text-center min-h-[160px]">
+                  <i data-lucide="cpu" class="w-8 h-8 text-zinc-600 mb-2"></i>
+                  <p class="text-xs font-mono text-zinc-400">Wiring Diagram / Inverter Test Bench</p>
+                  <p class="text-[11px] text-zinc-600 mt-1">CAD schematic / bench photo</p>
+                </div>
+                <div class="rounded-lg border border-dashed border-zinc-800 bg-zinc-950/60 p-5 flex flex-col items-center justify-center text-center min-h-[160px]">
+                  <i data-lucide="activity" class="w-8 h-8 text-zinc-600 mb-2"></i>
+                  <p class="text-xs font-mono text-zinc-400">Telemetry Data & LabVIEW GUI</p>
+                  <p class="text-[11px] text-zinc-600 mt-1">Dashboard screenshot</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- PROJECT 4: SmartSystem S.R.L. -->
+        <details class="group border border-zinc-800/90 rounded-xl bg-zinc-900/40 hover:border-zinc-700 transition-all overflow-hidden">
+          <summary class="cursor-pointer list-none p-6 flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+            <div class="space-y-2 flex-grow">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="text-xs font-mono font-medium text-cyan-400 bg-cyan-950/70 border border-cyan-800/60 px-2 py-0.5 rounded">
+                  SmartSystem S.R.L.
+                </span>
+                <span class="text-zinc-600">•</span>
+                <span class="text-xs font-mono text-zinc-400">Embedded Developer</span>
+                <span class="text-zinc-600">•</span>
+                <span class="text-xs font-mono text-zinc-400">05.2023 – 08.2023</span>
+              </div>
+              <h3 class="text-lg font-semibold text-white group-hover:text-cyan-300 transition-colors">
+                CAN FD & UART Communication Bridge
+              </h3>
+              <p class="text-sm text-zinc-400 leading-relaxed max-w-3xl">
+                Development of a communication bridge between an analog controller and a brushless motor driver using STM32 boards, CAN FD, and UART protocols.
+              </p>
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                <span class="px-2 py-0.5 text-xs font-mono bg-zinc-800/70 text-zinc-300 rounded border border-zinc-700/60">STM32</span>
+                <span class="px-2 py-0.5 text-xs font-mono bg-zinc-800/70 text-zinc-300 rounded border border-zinc-700/60">CAN FD</span>
+                <span class="px-2 py-0.5 text-xs font-mono bg-zinc-800/70 text-zinc-300 rounded border border-zinc-700/60">UART</span>
+                <span class="px-2 py-0.5 text-xs font-mono bg-zinc-800/70 text-zinc-300 rounded border border-zinc-700/60">Embedded C</span>
+              </div>
+            </div>
+            <div class="self-end sm:self-start text-zinc-500 group-open:rotate-180 transition-transform">
+              <i data-lucide="chevron-down" class="w-5 h-5"></i>
+            </div>
+          </summary>
+
+          <div class="px-6 pb-6 pt-2 border-t border-zinc-800/80 space-y-5 text-sm text-zinc-300">
+            <div>
+              <h4 class="text-xs font-mono uppercase tracking-wider text-cyan-400 mb-1">Implementation</h4>
+              <p class="text-zinc-400 leading-relaxed">
+                Conversion of real-time analog signals into standardized CAN FD packets with minimal latency, implementing CRC check routines and error-handling mechanisms for industrial motion control.
+              </p>
+            </div>
+
+            <!-- Media Slot -->
+            <div>
+              <h4 class="text-xs font-mono uppercase tracking-wider text-zinc-400 mb-2">Media & Visuals</h4>
+              <div class="rounded-lg border border-dashed border-zinc-800 bg-zinc-950/60 p-5 flex flex-col items-center justify-center text-center min-h-[140px]">
+                <i data-lucide="git-commit" class="w-8 h-8 text-zinc-600 mb-2"></i>
+                <p class="text-xs font-mono text-zinc-400">Oscilloscope Traces & Protocol Sniffing Logs</p>
+                <p class="text-[11px] text-zinc-600 mt-1">Attach signal capture or PCB photo</p>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- PROJECT 5: Bachelor Thesis -->
+        <details class="group border border-zinc-800/90 rounded-xl bg-zinc-900/40 hover:border-zinc-700 transition-all overflow-hidden">
+          <summary class="cursor-pointer list-none p-6 flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+            <div class="space-y-2 flex-grow">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="text-xs font-mono font-medium text-cyan-400 bg-cyan-950/70 border border-cyan-800/60 px-2 py-0.5 rounded">
+                  University of Bologna
+                </span>
+                <span class="text-zinc-600">•</span>
+                <span class="text-xs font-mono text-zinc-400">Bachelor Thesis</span>
+                <span class="text-zinc-600">•</span>
+                <span class="text-xs font-mono text-zinc-400">2023</span>
+              </div>
+              <h3 class="text-lg font-semibold text-white group-hover:text-cyan-300 transition-colors">
+                Robotic Manipulation Assisted by Shared Control Algorithms
+              </h3>
+              <p class="text-sm text-zinc-400 leading-relaxed max-w-3xl">
+                Robotic manipulation assisted by shared control algorithms, establishing cooperative control between human operator inputs and autonomous robotic trajectories.
+              </p>
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                <span class="px-2 py-0.5 text-xs font-mono bg-zinc-800/70 text-zinc-300 rounded border border-zinc-700/60">Robotics</span>
+                <span class="px-2 py-0.5 text-xs font-mono bg-zinc-800/70 text-zinc-300 rounded border border-zinc-700/60">Shared Control</span>
+                <span class="px-2 py-0.5 text-xs font-mono bg-zinc-800/70 text-zinc-300 rounded border border-zinc-700/60">Control Theory</span>
+                <span class="px-2 py-0.5 text-xs font-mono bg-zinc-800/70 text-zinc-300 rounded border border-zinc-700/60">MATLAB / Simulink</span>
+              </div>
+            </div>
+            <div class="self-end sm:self-start text-zinc-500 group-open:rotate-180 transition-transform">
+              <i data-lucide="chevron-down" class="w-5 h-5"></i>
+            </div>
+          </summary>
+
+          <div class="px-6 pb-6 pt-2 border-t border-zinc-800/80 space-y-5 text-sm text-zinc-300">
+            <div>
+              <h4 class="text-xs font-mono uppercase tracking-wider text-cyan-400 mb-1">Thesis Summary</h4>
+              <p class="text-zinc-400 leading-relaxed">
+                Design and simulated verification of haptic/virtual fixtures assisting human operators during fine telemanipulation tasks to prevent kinematic singularities and collision boundaries.
+              </p>
+            </div>
+
+            <!-- Media Slot -->
+            <div>
+              <h4 class="text-xs font-mono uppercase tracking-wider text-zinc-400 mb-2">Media & Visuals</h4>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="rounded-lg border border-dashed border-zinc-800 bg-zinc-950/60 p-5 flex flex-col items-center justify-center text-center min-h-[140px]">
+                  <i data-lucide="file-text" class="w-8 h-8 text-zinc-600 mb-2"></i>
+                  <p class="text-xs font-mono text-zinc-400">Thesis Report (PDF)</p>
+                  <p class="text-[11px] text-zinc-600 mt-1">Link to downloadable document</p>
+                </div>
+                <div class="rounded-lg border border-dashed border-zinc-800 bg-zinc-950/60 p-5 flex flex-col items-center justify-center text-center min-h-[140px]">
+                  <i data-lucide="monitor" class="w-8 h-8 text-zinc-600 mb-2"></i>
+                  <p class="text-xs font-mono text-zinc-400">Simulink Block Diagram</p>
+                  <p class="text-[11px] text-zinc-600 mt-1">Replace with diagram image</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- Direct Contact Section -->
+    <section id="contact" class="pt-8 border-t border-zinc-800 space-y-6">
+      <div>
+        <h2 class="text-xl font-bold tracking-tight text-white flex items-center gap-2">
+          <i data-lucide="send" class="w-5 h-5 text-cyan-400"></i> Get In Touch
+        </h2>
+        <p class="text-sm text-zinc-400 mt-1">
+          Feel free to reach out for project reports, technical discussions, or collaboration inquiries.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <a href="mailto:alessandro.gaggioli4@gmail.com" class="p-4 rounded-xl border border-zinc-800/80 bg-zinc-900/50 hover:border-cyan-500/50 hover:bg-zinc-900 transition-all flex flex-col justify-between">
+          <div class="flex items-center gap-2 text-cyan-400 mb-2 text-xs font-mono uppercase">
+            <i data-lucide="mail" class="w-4 h-4"></i> Email
+          </div>
+          <span class="text-sm text-white font-mono break-all">alessandro.gaggioli4@gmail.com</span>
+        </a>
+
+        <a href="tel:+393669430374" class="p-4 rounded-xl border border-zinc-800/80 bg-zinc-900/50 hover:border-cyan-500/50 hover:bg-zinc-900 transition-all flex flex-col justify-between">
+          <div class="flex items-center gap-2 text-cyan-400 mb-2 text-xs font-mono uppercase">
+            <i data-lucide="phone" class="w-4 h-4"></i> Direct Phone
+          </div>
+          <span class="text-sm text-white font-mono">+39 366 943 0374</span>
+        </a>
+
+        <a href="https://linkedin.com/in/AlessandroGaggioli" target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl border border-zinc-800/80 bg-zinc-900/50 hover:border-cyan-500/50 hover:bg-zinc-900 transition-all flex flex-col justify-between">
+          <div class="flex items-center gap-2 text-cyan-400 mb-2 text-xs font-mono uppercase">
+            <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn
+          </div>
+          <span class="text-sm text-white font-mono">Alessandro Gaggioli</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-zinc-800/80 py-6 text-center text-xs font-mono text-zinc-500">
+    Alessandro Gaggioli &bull; Automation Engineer &bull; Alma Mater Studiorum &ndash; Università di Bologna
+  </footer>
+
+  <script>
+    window.onload = function() {
+      lucide.createIcons();
+    };
+  </script>
+</body>
+</html>
