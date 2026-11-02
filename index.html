@@ -29,22 +29,40 @@
         As an engineer, I am passionate about technology and innovation, particularly automation, power electronics and sustainable mobility. Determination, teamwork and curiosity guide my path. My passion for marine activities has driven me to challenge myself in experiences such as UniBoAT and the Monaco Energy Boat Challenge. My goal is to continue growing and contributing to innovative and sustainable projects.
       </p>
       <div class="mt-6 flex flex-wrap gap-2 font-mono text-xs text-zinc-300">
-        <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">ROS2</span>
-        <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">STM32</span>
+        <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">ROS2 / ROS</span>
         <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">C / C++</span>
         <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">Python</span>
+        <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">CasADi & Optimization</span>
+        <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">PLECS</span>
         <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">MATLAB & Simulink</span>
-        <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">LabVIEW</span>
-        <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">CAN / CAN-FD</span>
-        <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">Creo Parametric</span>
+        <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">STM32 / Embedded</span>
+        <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">CAN-FD</span>
       </div>
     </header>
 
-    <!-- Projects Section -->
-    <section class="mt-12">
-      <h2 class="text-xl font-semibold text-white tracking-tight mb-8">Selected Work & Projects</h2>
-      <div id="projects-container" class="space-y-4">
-        <!-- Generato automaticamente da projects.js -->
+    <!-- Filter Controls -->
+    <section class="mt-10">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-zinc-800/60">
+        <!-- Category Filters -->
+        <div class="flex flex-wrap gap-2 text-xs font-mono" id="category-filters">
+          <button data-cat="all" class="filter-btn active px-3 py-1.5 rounded border border-cyan-500 bg-cyan-500/10 text-cyan-300">All</button>
+          <button data-cat="robotics" class="filter-btn px-3 py-1.5 rounded border border-zinc-800 bg-zinc-900 text-zinc-400 hover:text-white">Robotics & Autonomous Systems</button>
+          <button data-cat="control" class="filter-btn px-3 py-1.5 rounded border border-zinc-800 bg-zinc-900 text-zinc-400 hover:text-white">Control & Optimization</button>
+          <button data-cat="vision-realtime" class="filter-btn px-3 py-1.5 rounded border border-zinc-800 bg-zinc-900 text-zinc-400 hover:text-white">Vision & Real-Time</button>
+          <button data-cat="power-auto" class="filter-btn px-3 py-1.5 rounded border border-zinc-800 bg-zinc-900 text-zinc-400 hover:text-white">Power Electronics & PLC</button>
+        </div>
+
+        <!-- Degree Level Filter -->
+        <div class="flex gap-1.5 text-xs font-mono self-start md:self-auto" id="degree-filters">
+          <button data-degree="all" class="degree-btn active px-2.5 py-1 rounded bg-zinc-800 text-white">All</button>
+          <button data-degree="msc" class="degree-btn px-2.5 py-1 rounded bg-zinc-900 text-zinc-400 hover:text-white border border-zinc-800">M.Sc.</button>
+          <button data-degree="bsc" class="degree-btn px-2.5 py-1 rounded bg-zinc-900 text-zinc-400 hover:text-white border border-zinc-800">B.Sc.</button>
+        </div>
+      </div>
+
+      <!-- Project List Container -->
+      <div id="projects-container" class="mt-8 space-y-4">
+        <!-- Rendered by projects.js -->
       </div>
     </section>
 
