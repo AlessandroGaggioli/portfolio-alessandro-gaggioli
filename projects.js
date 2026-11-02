@@ -15,7 +15,7 @@ const projects = [
       "Task 3: Non-blocking state machine orchestrating approach trajectory, head-tilt visual servoing, cartesian descent, and IFRA link attacher for dual-cube pick & place."
     ],
     pdf: "Autonomous_Mobile_Robotics_Exam_Group30_Report.pdf",
-    image: "",
+    image: "img/amr-map.jpg",
     video: "Task 2 & 3.mp4"
   },
   {
@@ -34,7 +34,7 @@ const projects = [
     ],
     pdf: "Tesi_Gaggioli_Alessandro.pdf",
     pdfLabel: "View Thesis PDF",
-    image: "",
+    image: "img/thesis-setup.jpg",
     video: ""
   },
   {
@@ -160,7 +160,7 @@ const projects = [
       "Implemented Sinusoidal PWM with Phase Disposition (SPWM-PD) at 16 kHz, achieving THD < 3.5% and European weighted efficiency above 98.8%."
     ],
     pdf: "Design_and_Simulation_of_a_20kW_NPC_inverter_for_a_1500V_BESS_in_the_USA_market.pdf",
-    image: "",
+    image: "img/npc-plecs.png",
     video: ""
   },
   {
@@ -177,7 +177,7 @@ const projects = [
       "Engineered high/low voltage powertrain, programmed STM32 boards and inverter for electric prototype outboard motor, and implemented Master ECU logic in LabVIEW. 4th place at MEBC 2024, 3rd place at SIBW 2024."
     ],
     pdf: "",
-    image: "",
+    image: ["img/mebc-prize.jpg", "img/uniboat.jpg"],
     video: "UniBoAT_slalom_race.mp4"
   },
   {
@@ -194,7 +194,7 @@ const projects = [
       "Achieved 0.28% output current ripple, 0.38% input current ripple and 0% speed overshoot; the <100 ms rise time target proved unachievable due to the current limit."
     ],
     pdf: "DC control.pdf",
-    image: "",
+    image: "img/dc-simulink.png",
     video: ""
   },
   {
@@ -255,7 +255,7 @@ function renderProjects() {
   }).sort((a, b) => (!!b.highlight - !!a.highlight) || (endDateKey(b.date) - endDateKey(a.date)));
 
   if (filtered.length === 0) {
-    container.innerHTML = `<p class="text-zinc-500 font-mono text-xs py-8 text-center">No projects found for the selected filter.</p>`;
+    container.innerHTML = `<p class="text-zinc-400 font-mono text-xs py-8 text-center">No projects found for the selected filter.</p>`;
     return;
   }
 
@@ -264,13 +264,13 @@ function renderProjects() {
       <summary class="cursor-pointer select-none">
         <div class="flex flex-col md:flex-row md:items-baseline justify-between gap-1">
           <div class="flex items-center gap-2">
-            <span class="text-zinc-500 font-mono text-xs transition-transform group-open:rotate-90">▶</span>
+            <span class="text-zinc-400 font-mono text-xs transition-transform group-open:rotate-90">▶</span>
             <h3 class="text-base font-medium text-white group-hover:text-cyan-400 transition-colors">${p.title}</h3>
           </div>
           <div class="flex items-center gap-2 self-start md:self-auto font-mono text-xs">
             ${p.highlight ? `<span class="featured-badge px-2 py-0.5 rounded font-semibold uppercase tracking-wide">★ ${p.highlight}</span>` : ''}
             <span class="px-1.5 py-0.5 rounded bg-zinc-800 text-cyan-300 uppercase">${p.degree}</span>
-            ${p.date ? `<span class="text-zinc-500">${p.date}</span>` : ''}
+            ${p.date ? `<span class="text-zinc-400">${p.date}</span>` : ''}
           </div>
         </div>
         <div class="mt-2 pl-4 text-xs font-mono text-cyan-400/90">
@@ -289,11 +289,11 @@ function renderProjects() {
           ${p.points.map(pt => `<li>${pt}</li>`).join('')}
         </ul>
 
-        ${p.image ? `
-          <div class="mt-3">
-            <img src="${p.image}" alt="${p.title}" class="rounded border border-zinc-800 max-h-80 object-cover w-full">
-          </div>
-        ` : ''}
+        ${[].concat(p.image || []).map(src => `
+          <a href="${src}" target="_blank" class="mt-3 block" title="Open full size">
+            <img src="${src}" alt="${p.title}" loading="lazy" class="mx-auto rounded border border-zinc-600 bg-white max-h-96 w-auto max-w-full">
+          </a>
+        `).join('')}
 
         ${p.video ? renderVideo(p.video, p.videoMaxWidth) : ''}
 
@@ -309,21 +309,54 @@ function renderProjects() {
   `).join('');
 }
 
+function syncFilterButtons() {
+  document.querySelectorAll("#category-filters .filter-btn").forEach(b => {
+    const on = b.getAttribute("data-cat") === activeCategory;
+    b.classList.toggle("active", on);
+    b.setAttribute("aria-pressed", on);
+  });
+  document.querySelectorAll("#degree-filters .degree-btn").forEach(b => {
+    const on = b.getAttribute("data-degree") === activeDegree;
+    b.classList.toggle("active", on);
+    b.setAttribute("aria-pressed", on);
+  });
+}
+
+// Keep the selected filters in the URL (#cat=robotics&degree=msc) so a filtered view can be shared
+function writeFiltersToUrl() {
+  const params = new URLSearchParams();
+  if (activeCategory !== "all") params.set("cat", activeCategory);
+  if (activeDegree !== "all") params.set("degree", activeDegree);
+  const hash = params.toString();
+  history.replaceState(null, "", hash ? `#${hash}` : location.pathname + location.search);
+}
+
+function readFiltersFromUrl() {
+  const params = new URLSearchParams(location.hash.slice(1));
+  const cat = params.get("cat");
+  const degree = params.get("degree");
+  if (cat && document.querySelector(`#category-filters [data-cat="${CSS.escape(cat)}"]`)) activeCategory = cat;
+  if (degree && document.querySelector(`#degree-filters [data-degree="${CSS.escape(degree)}"]`)) activeDegree = degree;
+}
+
 function initFilters() {
+  readFiltersFromUrl();
+  syncFilterButtons();
+
   document.querySelectorAll("#category-filters .filter-btn").forEach(btn => {
     btn.addEventListener("click", () => {
-      document.querySelectorAll("#category-filters .filter-btn").forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
       activeCategory = btn.getAttribute("data-cat");
+      syncFilterButtons();
+      writeFiltersToUrl();
       renderProjects();
     });
   });
 
   document.querySelectorAll("#degree-filters .degree-btn").forEach(btn => {
     btn.addEventListener("click", () => {
-      document.querySelectorAll("#degree-filters .degree-btn").forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
       activeDegree = btn.getAttribute("data-degree");
+      syncFilterButtons();
+      writeFiltersToUrl();
       renderProjects();
     });
   });
