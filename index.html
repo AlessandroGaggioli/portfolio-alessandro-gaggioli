@@ -11,52 +11,66 @@
 
   <main class="max-w-4xl mx-auto px-6 py-16">
     <!-- Header -->
-    <header class="border-b border-zinc-800 pb-10">
+    <header class="border-b border-cyan-500/30 pb-10">
       <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
-        <div>
-          <h1 class="text-3xl font-bold tracking-tight text-white">Alessandro Gaggioli</h1>
-          <p class="text-cyan-400 font-mono text-sm mt-1">Automation Engineer · Alma Mater Studiorum - Università di Bologna</p>
+        <div class="flex items-center gap-5">
+          <div class="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-2 border-cyan-500 shadow-[0_0_18px_rgba(6,182,212,0.35)] shrink-0">
+            <img src="foto.jpg" alt="Alessandro Gaggioli" class="w-full h-full object-cover scale-[1.4] origin-[45%_28%]">
+          </div>
+          <div>
+            <h1 class="text-3xl font-bold tracking-tight text-white">Alessandro Gaggioli</h1>
+            <p class="text-cyan-400 font-mono text-sm mt-1">Automation Engineer · Alma Mater Studiorum - Università di Bologna</p>
+          </div>
         </div>
         <div class="flex flex-wrap gap-4 text-sm font-mono text-zinc-400">
-          <a href="mailto:alessandro.gaggioli4@gmail.com" class="hover:text-cyan-400">Email</a>
+          <a href="#" data-reveal="alessandro.gaggioli4@gmail.com" data-label="Email" class="hover:text-cyan-400">Email</a>
           <span>/</span>
           <a href="https://linkedin.com/in/AlessandroGaggioli" target="_blank" class="hover:text-cyan-400">LinkedIn</a>
           <span>/</span>
-          <a href="tel:+393669430374" class="hover:text-cyan-400">+39 366 9430374</a>
+          <a href="#" data-reveal="+39 366 9430374" data-label="Phone number" class="hover:text-cyan-400">Phone number</a>
         </div>
       </div>
       <p class="mt-8 text-zinc-300 text-sm md:text-base leading-relaxed max-w-3xl">
         As an engineer, I am passionate about technology and innovation, particularly automation, power electronics and sustainable mobility. Determination, teamwork and curiosity guide my path. My passion for marine activities has driven me to challenge myself in experiences such as UniBoAT and the Monaco Energy Boat Challenge. My goal is to continue growing and contributing to innovative and sustainable projects.
       </p>
+      <a href="Gaggioli_Alessandro_CV.pdf" download class="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded border border-cyan-500 bg-cyan-500/15 text-cyan-200 font-mono text-sm hover:bg-cyan-500 hover:text-zinc-950 transition-colors">
+        <span>⬇</span> Download CV
+      </a>
       <div class="mt-6 flex flex-wrap gap-2 font-mono text-xs text-zinc-300">
-        <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">ROS2 / ROS</span>
-        <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">C / C++</span>
-        <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">Python</span>
-        <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">CasADi & Optimization</span>
-        <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">PLECS</span>
-        <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">MATLAB & Simulink</span>
-        <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">STM32 / Embedded</span>
-        <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">CAN-FD</span>
+        <span class="px-2.5 py-1 rounded bg-cyan-500/5 border border-cyan-500/30 text-cyan-100">C / C++</span>
+        <span class="px-2.5 py-1 rounded bg-cyan-500/5 border border-cyan-500/30 text-cyan-100">Python</span>
+        <span class="px-2.5 py-1 rounded bg-cyan-500/5 border border-cyan-500/30 text-cyan-100">MATLAB & Simulink</span>
+        <span class="px-2.5 py-1 rounded bg-cyan-500/5 border border-cyan-500/30 text-cyan-100">STM32 / Embedded</span>
+        <span class="px-2.5 py-1 rounded bg-cyan-500/5 border border-cyan-500/30 text-cyan-100">CAN communication</span>
+        <span class="px-2.5 py-1 rounded bg-cyan-500/5 border border-cyan-500/30 text-cyan-100">ROS2</span>
+        <span class="px-2.5 py-1 rounded bg-cyan-500/5 border border-cyan-500/30 text-cyan-100">Autonomous Navigation</span>
+        <span class="px-2.5 py-1 rounded bg-cyan-500/5 border border-cyan-500/30 text-cyan-100">Control theory</span>
       </div>
     </header>
 
     <!-- Filter Controls -->
     <section class="mt-10">
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-zinc-800/60">
+      <div class="flex flex-col md:flex-row md:items-start justify-between gap-4 pb-6 border-b border-zinc-700">
         <!-- Category Filters -->
-        <div class="flex flex-wrap gap-2 text-xs font-mono" id="category-filters">
+        <div>
+          <h2 class="text-xs font-mono uppercase tracking-widest text-cyan-400 mb-2">Filter by area</h2>
+          <div class="flex flex-wrap gap-2 text-xs font-mono" id="category-filters">
           <button data-cat="all" class="filter-btn active px-3 py-1.5 rounded border border-cyan-500 bg-cyan-500/10 text-cyan-300">All</button>
-          <button data-cat="robotics" class="filter-btn px-3 py-1.5 rounded border border-zinc-800 bg-zinc-900 text-zinc-400 hover:text-white">Robotics & Autonomous Systems</button>
-          <button data-cat="control" class="filter-btn px-3 py-1.5 rounded border border-zinc-800 bg-zinc-900 text-zinc-400 hover:text-white">Control & Optimization</button>
-          <button data-cat="vision-realtime" class="filter-btn px-3 py-1.5 rounded border border-zinc-800 bg-zinc-900 text-zinc-400 hover:text-white">Vision & Real-Time</button>
-          <button data-cat="power-auto" class="filter-btn px-3 py-1.5 rounded border border-zinc-800 bg-zinc-900 text-zinc-400 hover:text-white">Power Electronics & PLC</button>
+          <button data-cat="robotics" class="filter-btn px-3 py-1.5 rounded border border-zinc-600 bg-zinc-800/70 text-zinc-200 hover:border-cyan-500 hover:text-cyan-300 transition-colors">Robotics & Autonomous Systems</button>
+          <button data-cat="control" class="filter-btn px-3 py-1.5 rounded border border-zinc-600 bg-zinc-800/70 text-zinc-200 hover:border-cyan-500 hover:text-cyan-300 transition-colors">Control & Optimization</button>
+          <button data-cat="vision-realtime" class="filter-btn px-3 py-1.5 rounded border border-zinc-600 bg-zinc-800/70 text-zinc-200 hover:border-cyan-500 hover:text-cyan-300 transition-colors">Vision & Embedded Software</button>
+          <button data-cat="power-auto" class="filter-btn px-3 py-1.5 rounded border border-zinc-600 bg-zinc-800/70 text-zinc-200 hover:border-cyan-500 hover:text-cyan-300 transition-colors">Power Electronics & PLC</button>
+          </div>
         </div>
 
         <!-- Degree Level Filter -->
-        <div class="flex gap-1.5 text-xs font-mono self-start md:self-auto" id="degree-filters">
+        <div class="self-start md:self-auto">
+          <h2 class="text-xs font-mono uppercase tracking-widest text-cyan-400 mb-2">Filter by degree</h2>
+          <div class="flex gap-1.5 text-xs font-mono" id="degree-filters">
           <button data-degree="all" class="degree-btn active px-2.5 py-1 rounded bg-zinc-800 text-white">All</button>
-          <button data-degree="msc" class="degree-btn px-2.5 py-1 rounded bg-zinc-900 text-zinc-400 hover:text-white border border-zinc-800">M.Sc.</button>
-          <button data-degree="bsc" class="degree-btn px-2.5 py-1 rounded bg-zinc-900 text-zinc-400 hover:text-white border border-zinc-800">B.Sc.</button>
+          <button data-degree="msc" class="degree-btn px-2.5 py-1 rounded bg-zinc-800/70 text-zinc-200 hover:text-cyan-300 border border-zinc-600 hover:border-cyan-500 transition-colors">M.Sc.</button>
+          <button data-degree="bsc" class="degree-btn px-2.5 py-1 rounded bg-zinc-800/70 text-zinc-200 hover:text-cyan-300 border border-zinc-600 hover:border-cyan-500 transition-colors">B.Sc.</button>
+          </div>
         </div>
       </div>
 
@@ -67,12 +81,23 @@
     </section>
 
     <!-- Footer -->
-    <footer class="mt-20 pt-8 border-t border-zinc-900 text-xs font-mono text-zinc-400 flex justify-between">
+    <footer class="mt-20 pt-8 border-t border-zinc-900 text-xs font-mono text-zinc-400 grid grid-cols-1 md:grid-cols-3 gap-2 text-center md:text-left">
       <span>Alessandro Gaggioli</span>
-      <a href="mailto:alessandro.gaggioli4@gmail.com" class="hover:text-cyan-400">alessandro.gaggioli4@gmail.com</a>
+      <span class="md:text-center">+39 366 9430374</span>
+      <span class="md:text-right">alessandro.gaggioli4@gmail.com</span>
     </footer>
   </main>
 
   <script src="projects.js"></script>
+  <script>
+    // Click toggles between the label and the actual contact (no mail/phone app is opened)
+    document.querySelectorAll("[data-reveal]").forEach(el => {
+      el.addEventListener("click", e => {
+        e.preventDefault();
+        const shown = el.textContent === el.dataset.reveal;
+        el.textContent = shown ? el.dataset.label : el.dataset.reveal;
+      });
+    });
+  </script>
 </body>
 </html>

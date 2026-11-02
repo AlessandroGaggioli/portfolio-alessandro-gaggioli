@@ -8,6 +8,7 @@ const projects = [
     date: "2025 - 2026",
     role: "M.Sc. Project (Team of 2)",
     tags: ["ROS2", "TIAGo Robot", "Nav2", "SLAM Toolbox", "MoveIt2", "ArUco"],
+    summary: "Simulation project on the TIAGo mobile manipulator in Gazebo with ROS2: the robot autonomously explores and maps an unknown environment, localizes itself within it, and then detects ArUco markers to pick up and place objects.",
     points: [
       "Task 1: Full autonomous exploration and occupancy grid mapping in Gazebo using slam_toolbox and explore_lite with TIAGo arm tucked in home position.",
       "Task 2: Global localization using AMCL with particle redistribution and yaw sweep; random waypoint exploration on global costmaps to detect pick/place ArUco markers.",
@@ -15,7 +16,7 @@ const projects = [
     ],
     pdf: "Autonomous_Mobile_Robotics_Exam_Group30_Report.pdf",
     image: "",
-    video: ""
+    video: "Task 2 & 3.mp4"
   },
   {
     title: "Robotic Manipulation Assisted by Shared Control Algorithms",
@@ -24,27 +25,30 @@ const projects = [
     context: "Bachelor's Degree Thesis · UniBo (Advisor: Prof. G. Palli)",
     date: "2022 - 2023",
     role: "B.Sc. Thesis Project",
+    highlight: "Bachelor's Thesis",
     tags: ["ROS", "C++", "Franka Emika Panda", "Geomagic Touch", "Bézier Splines", "Haptics"],
     points: [
       "Designed and evaluated a human-in-the-loop shared control framework on a 7-DOF Franka Emika Panda cobot and Geomagic Touch haptic interface.",
       "Implemented a dynamic force field based on cubic Bézier curves and arctangent potential valleys to guide the operator toward grasping targets.",
       "Conducted experimental validation with 10 test subjects, demonstrating a ~47% reduction in task completion time and significant fatigue reduction."
     ],
-    pdf: "TesiGaggioli.pdf",
+    pdf: "Tesi_Gaggioli_Alessandro.pdf",
+    pdfLabel: "View Thesis PDF",
     image: "",
     video: ""
   },
   {
-    title: "Naval Robotics & Autonomous Navigation Simulation",
+    title: "Naval Robotics: navigation in non inertial marine environments",
     category: "robotics",
     degree: "msc",
     context: "Fincantieri NexTech (Genoa)",
     date: "03.2026 - 06.2026",
     role: "Thesis Internship · Naval Robotics",
-    tags: ["ROS2", "Mobile Robotics", "Autonomous Navigation", "Simulation"],
+    highlight: "Internship",
+    tags: ["ROS2", "Mobile Robotics", "Autonomous Navigation", "Visual-Inertial Odometry", "Simulation"],
     points: [
       "Investigation and engineering of mobile and assistive robotics applications on naval vessels.",
-      "Development of realistic ROS2-based simulation pipelines for obstacle avoidance, guidance, and path planning."
+      "Development of a ROS2-based simulation to evaluate loosely coupled visual-inertial stereo odometry."
     ],
     pdf: "",
     image: "",
@@ -67,10 +71,11 @@ const projects = [
     ],
     pdf: "Report_group_08.pdf",
     image: "",
-    video: ""
+    video: "task5optimalcontrol.mp4",
+    videoMaxWidth: "340px"
   },
   {
-    title: "Inverted Pendulum Control Synthesis & Simulation",
+    title: "Inverted Pendulum Control",
     category: "control",
     degree: "bsc",
     context: "Automatic Control Course · UniBo",
@@ -83,7 +88,8 @@ const projects = [
     ],
     pdf: "",
     image: "",
-    video: ""
+    video: "pendolo-inverso-cropped.mp4",
+    videoMaxWidth: "280px"
   },
 
   // --- VISION & REAL-TIME SYSTEMS ---
@@ -100,9 +106,9 @@ const projects = [
       "Compared Gaussian filtering against Moravec interest operator filtering to eliminate low-texture outliers.",
       "Implemented dynamic adaptive disparity ranges (64-pixel sliding window) and 5-stripe vertical planar angle estimation for obstacle orientation."
     ],
-    pdf: "Computer_Vision___Image_Processing_project.pdf",
+    pdf: "Faedo_Paltrinieri_Gaggioli_RobotNavigationProject.pdf",
     image: "",
-    video: ""
+    video: "CompVision.mp4"
   },
   {
     title: "Real-Time Systems: Multi-Thread Synchronization & IPC",
@@ -128,6 +134,7 @@ const projects = [
     context: "SmartSystem S.R.L. (Fano)",
     date: "05.2023 - 08.2023",
     role: "Computer Programmer",
+    highlight: "Internship",
     tags: ["Embedded C", "STM32", "CAN-FD", "UART", "Brushless Drivers"],
     points: [
       "Developed firmware bridge running on STM32 microcontrollers to interface an analog controller with an industrial brushless motor driver.",
@@ -157,18 +164,36 @@ const projects = [
     video: ""
   },
   {
-    title: "UniBoAT Racing Catamaran: Powertrain & Systems Architecture",
+    title: "UniBoAT Racing Catamaran",
     category: "power-auto",
     degree: "msc",
     context: "UniBoAT Team · Monaco Energy Boat Challenge",
     date: "2023 - 2025",
     role: "CTO (2024-2025) · Powertrain Member (2023-2024)",
+    highlight: "University Team",
     tags: ["Power Electronics", "Inverter", "LabVIEW", "CAN Bus", "STM32", "Telemetry"],
     points: [
-      "Coordinated full design, testing, and subsystem integration for zero-emission racing catamaran, winning 1st Place Overall at MEBC 2025.",
-      "Engineered high/low voltage powertrain, programmed STM32 boards and prototype inverter for electric outboard motor, and implemented Master ECU logic in LabVIEW."
+      "Coordinated full design, testing, and subsystem integration for zero-emission racing catamaran, winning 1st Place Overall at MEBC 2025, Design Prize and Innovation Prize.",
+      "Engineered high/low voltage powertrain, programmed STM32 boards and inverter for electric prototype outboard motor, and implemented Master ECU logic in LabVIEW. 4th place at MEBC 2024, 3rd place at SIBW 2024."
     ],
     pdf: "",
+    image: "",
+    video: "UniBoAT_slalom_race.mp4"
+  },
+  {
+    title: "DC Motor Drive: 4-Quadrant Converter with Cascaded Speed & Current Control",
+    category: "power-auto",
+    degree: "bsc",
+    context: "Electric Drives Laboratory (Laboratorio di Azionamenti Elettrici) · UniBo",
+    date: "2022",
+    role: "B.Sc. Course Project",
+    tags: ["MATLAB", "Simulink", "4-Quadrant DC/DC Converter", "PWM", "PI Control", "Anti-Windup"],
+    points: [
+      "Modeled in Simulink a DC motor drive fed by a real 4-quadrant (H-bridge) DC/DC converter with source impedance and input filter, including motor and load dynamics.",
+      "Designed cascaded control with an inner current loop and an outer speed loop (PI regulators with anti-windup saturation) driving a unipolar PWM at 100 kHz.",
+      "Achieved 0.28% output current ripple, 0.38% input current ripple and 0% speed overshoot; the <100 ms rise time target proved unachievable due to the current limit."
+    ],
+    pdf: "DC control.pdf",
     image: "",
     video: ""
   },
@@ -193,6 +218,32 @@ const projects = [
 let activeCategory = "all";
 let activeDegree = "all";
 
+function renderVideo(src, maxWidth) {
+  if (/\.(mp4|webm)$/i.test(src)) {
+    return `
+      <div class="mt-3 mx-auto"${maxWidth ? ` style="max-width: ${maxWidth}"` : ''}>
+        <video controls preload="metadata" class="w-full rounded border border-zinc-700 bg-black">
+          <source src="${encodeURI(src)}" type="video/${src.split('.').pop().toLowerCase()}">
+        </video>
+      </div>
+    `;
+  }
+  return `
+    <div class="mt-3 aspect-video">
+      <iframe src="${src}" class="w-full h-full rounded border border-zinc-800" allowfullscreen></iframe>
+    </div>
+  `;
+}
+
+// Sort key from the end of the date range: "03.2026 - 06.2026" -> 202606, "2025 - 2026" -> 202612
+function endDateKey(date) {
+  const end = (date || "").split("-").pop().trim();
+  const [first, second] = end.split(".");
+  const year = parseInt(second || first, 10) || 0;
+  const month = second ? parseInt(first, 10) : 12;
+  return year * 100 + month;
+}
+
 function renderProjects() {
   const container = document.getElementById("projects-container");
   if (!container) return;
@@ -201,7 +252,7 @@ function renderProjects() {
     const matchCat = (activeCategory === "all") || (p.category === activeCategory);
     const matchDeg = (activeDegree === "all") || (p.degree === activeDegree);
     return matchCat && matchDeg;
-  });
+  }).sort((a, b) => (!!b.highlight - !!a.highlight) || (endDateKey(b.date) - endDateKey(a.date)));
 
   if (filtered.length === 0) {
     container.innerHTML = `<p class="text-zinc-500 font-mono text-xs py-8 text-center">No projects found for the selected filter.</p>`;
@@ -209,7 +260,7 @@ function renderProjects() {
   }
 
   container.innerHTML = filtered.map(p => `
-    <details class="group bg-zinc-900/60 border border-zinc-800 rounded-lg p-5 transition-all">
+    <details class="project-card group rounded-lg p-5 transition-all${p.highlight ? ' featured' : ''}">
       <summary class="cursor-pointer select-none">
         <div class="flex flex-col md:flex-row md:items-baseline justify-between gap-1">
           <div class="flex items-center gap-2">
@@ -217,8 +268,9 @@ function renderProjects() {
             <h3 class="text-base font-medium text-white group-hover:text-cyan-400 transition-colors">${p.title}</h3>
           </div>
           <div class="flex items-center gap-2 self-start md:self-auto font-mono text-xs">
+            ${p.highlight ? `<span class="featured-badge px-2 py-0.5 rounded font-semibold uppercase tracking-wide">★ ${p.highlight}</span>` : ''}
             <span class="px-1.5 py-0.5 rounded bg-zinc-800 text-cyan-300 uppercase">${p.degree}</span>
-            <span class="text-zinc-500">${p.date}</span>
+            ${p.date ? `<span class="text-zinc-500">${p.date}</span>` : ''}
           </div>
         </div>
         <div class="mt-2 pl-4 text-xs font-mono text-cyan-400/90">
@@ -228,20 +280,14 @@ function renderProjects() {
 
       <div class="mt-5 pt-4 border-t border-zinc-800/80 pl-4 space-y-4 text-sm text-zinc-300">
         <div class="flex flex-wrap gap-1.5 font-mono text-xs">
-          ${p.tags.map(t => `<span class="px-2 py-0.5 rounded bg-zinc-800 text-zinc-400">${t}</span>`).join('')}
+          ${p.tags.map(t => `<span class="px-2 py-0.5 rounded bg-zinc-800 border border-zinc-700 text-zinc-300">${t}</span>`).join('')}
         </div>
+
+        ${p.summary ? `<p class="text-xs md:text-sm text-zinc-200 leading-relaxed">${p.summary}</p>` : ''}
 
         <ul class="list-disc list-inside space-y-1.5 text-zinc-300 leading-relaxed text-xs md:text-sm">
           ${p.points.map(pt => `<li>${pt}</li>`).join('')}
         </ul>
-
-        <div class="flex flex-wrap items-center gap-4 pt-2">
-          ${p.pdf ? `
-            <a href="${p.pdf}" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-mono text-cyan-400 hover:underline">
-              <span>📄</span> View Report PDF
-            </a>
-          ` : ''}
-        </div>
 
         ${p.image ? `
           <div class="mt-3">
@@ -249,9 +295,13 @@ function renderProjects() {
           </div>
         ` : ''}
 
-        ${p.video ? `
-          <div class="mt-3 aspect-video">
-            <iframe src="${p.video}" class="w-full h-full rounded border border-zinc-800" allowfullscreen></iframe>
+        ${p.video ? renderVideo(p.video, p.videoMaxWidth) : ''}
+
+        ${p.pdf ? `
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="${p.pdf}" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-mono text-cyan-400 hover:underline">
+              <span>📄</span> ${p.pdfLabel || "View Report PDF"}
+            </a>
           </div>
         ` : ''}
       </div>
